@@ -1,4 +1,4 @@
-package com.project.crystalBall.service;
+package com.project.crystalBall.mapper;
 
 import com.project.crystalBall.dto.AbstractDto;
 import com.project.crystalBall.entity.AbstractEntity;

@@ -6,7 +6,7 @@ spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/initial
     username: postgres
-    password: kikkuAchu
+    password: password
     driver-class-name: org.postgresql.Driver
 
 #  configure JPA

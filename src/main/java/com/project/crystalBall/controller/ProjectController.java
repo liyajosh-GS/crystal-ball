@@ -1,8 +1,7 @@
 package com.project.crystalBall.controller;
 
 import com.project.crystalBall.dto.project.Project;
-import com.project.crystalBall.dto.project.ProjectPatchContributionsDto;
-import com.project.crystalBall.service.impl.ProjectService;
+import com.project.crystalBall.service.impl.project.ProjectService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -12,34 +11,39 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/projects")
+@CrossOrigin(maxAge = 3600)
 public class ProjectController {
 
     @Autowired
     ProjectService projectService;
 
-    @GetMapping
-    public ResponseEntity<List<Project>> getAllProjects(){
+    @GetMapping("/{id}")
+    public ResponseEntity<Project> getProject(@PathVariable Long id){
         return ResponseEntity.status(HttpStatus.OK)
-                .body(projectService.readAll());
+                .body(projectService.read(id));
+    }
+
+    @GetMapping
+    public ResponseEntity<List<Project>> getAllLiveProjects(){
+        return ResponseEntity.status(HttpStatus.OK)
+                .body(projectService.readAllByStatus(Boolean.FALSE));
+    }
+
+    @GetMapping("/archived")
+    public ResponseEntity<List<Project>> getAllArchivedProjects(){
+        return ResponseEntity.status(HttpStatus.OK)
+                .body(projectService.readAllByStatus(Boolean.TRUE));
     }
 
     @PostMapping
-    public ResponseEntity create(@RequestBody Project project){
+    public ResponseEntity<Project> create(@RequestBody Project project){
         return ResponseEntity.status(HttpStatus.CREATED)
                 .body(projectService.create(project));
     }
 
-    @PatchMapping("/{id}")
-    public ResponseEntity patch(@RequestBody Project project, @PathVariable Long id){
-        projectService.patchUpdate(id, project);
-        return ResponseEntity.status(HttpStatus.OK).body(null);
+    @PutMapping
+    public ResponseEntity<Project> update(@RequestBody Project project){
+        return ResponseEntity.status(HttpStatus.OK).body(projectService.update(project));
     }
-
-    @PatchMapping("/contributions/{id}")
-    public ResponseEntity updateContributions(@RequestBody ProjectPatchContributionsDto contributionsDto, @PathVariable Long id){
-        projectService.updateContributions(id, contributionsDto);
-        return ResponseEntity.status(HttpStatus.OK).body(null);
-    }
-
 
 }

@@ -1,6 +1,6 @@
 package com.project.crystalBall.dto.project;
 
-import com.project.crystalBall.entity.Contribution;
+import com.project.crystalBall.dto.contribution.Contribution;
 import lombok.*;
 
 import java.util.List;

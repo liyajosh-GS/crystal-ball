@@ -15,6 +15,7 @@ public abstract class AbstractDto {
 
     Long id;
 
+    //for return responses
     OffsetDateTime createdTime;
 
     OffsetDateTime updateTime;

@@ -1,7 +1,6 @@
 package com.project.crystalBall.entity.project;
 
 import com.project.crystalBall.entity.AbstractEntity;
-import com.project.crystalBall.entity.Contribution;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -31,16 +30,14 @@ public class ProjectEntity extends AbstractEntity {
     @Column(name = "creators", nullable=false, updatable = false)
     private List<String> creators;
 
-    @JdbcTypeCode(SqlTypes.JSON)
-    @Column(name = "contributions")
-    private List<Contribution> contributions;
-
-    @Enumerated(EnumType.STRING)
-    @Column(name = "funding_status")
-    private FundingStatus fundingStatus;
+    @Column(name = "is_archived")
+    private Boolean isArchived;
 
     @Column(name = "target_fund", nullable=false)
-    private double targetFund;
+    private Double targetFund;
+
+    @Column(name = "collected_fund")
+    private Double collectedFund;
 
     @Column(name = "project_type", nullable=false)
     private ProjectType projectType;

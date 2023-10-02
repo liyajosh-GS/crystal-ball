@@ -1,5 +1,6 @@
-package com.project.crystalBall.entity;
+package com.project.crystalBall.dto.contribution;
 
+import com.project.crystalBall.dto.AbstractDto;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -9,8 +10,8 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class Contribution {
+public class Contribution extends AbstractDto {
 
     private Double amount;
-    private String contributor;
+    private Long projectId;
 }

@@ -1,8 +1,6 @@
 package com.project.crystalBall.dto.project;
 
 import com.project.crystalBall.dto.AbstractDto;
-import com.project.crystalBall.entity.Contribution;
-import com.project.crystalBall.entity.project.FundingStatus;
 import com.project.crystalBall.entity.project.ProjectType;
 import lombok.*;
 
@@ -23,12 +21,10 @@ public class Project extends AbstractDto {
     @NonNull
     private List<String> creators;
 
-    private List<Contribution> contributions;
-
-    private FundingStatus fundingStatus;
-
     @NonNull
     private Double targetFund;
+
+    private Double collectedFund;
 
     @NonNull
     private ProjectType projectType;
