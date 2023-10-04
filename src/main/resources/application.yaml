@@ -6,7 +6,7 @@ spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/initial
     username: postgres
-    password: password
+    password: kikkuAchu
     driver-class-name: org.postgresql.Driver
 
 #  configure JPA
@@ -17,3 +17,18 @@ spring:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
         show_sql: true
+
+# configure oauth
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            provider: google
+            client-id: 1051874624760-t5od2qfid4euev455idjijqs57mfs225.apps.googleusercontent.com
+            client-secret: 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
+            scope: openid,profile,email
+      resourceserver:
+        jwt:
+          issuer-uri: https://accounts.google.com
+          jwk-set-uri: https://www.googleapis.com/oauth2/v3/certs
