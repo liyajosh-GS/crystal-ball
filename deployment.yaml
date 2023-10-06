@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: crystal-ball-server
+  labels:
+    app: crystal-ball-server
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: crystal-ball-server
+  template:
+    metadata:
+      labels:
+        app: crystal-ball-server
+    spec:
+      containers:
+        - name: crystal-ball
+          image: liyajosh/crystal-ball:latest
+          ports:
+            - containerPort: 8080
+          env:
+            - name: POSTGRES_HOST
+              value: 10.244.0.14
+            - name: POSTGRES_DB
+              value: initial
+            - name: POSTGRES_USER
+              value: postgres
+            - name: POSTGRES_PASSWORD
+              value: password
