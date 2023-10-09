@@ -10,6 +10,7 @@
         <module name="security-new" />
         <module name="crystalBall" />
         <module name="security" />
+        <module name="user" />
       </profile>
     </annotationProcessing>
   </component>
@@ -18,6 +19,7 @@
       <module name="crystalBall" options="-parameters" />
       <module name="security" options="-parameters" />
       <module name="security-new" options="-parameters" />
+      <module name="user" options="-parameters" />
     </option>
   </component>
 </project>

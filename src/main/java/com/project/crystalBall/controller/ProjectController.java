@@ -1,7 +1,7 @@
-package com.project.crystalBall.controller;
+package com.project.crystalball.controller;
 
-import com.project.crystalBall.dto.project.Project;
-import com.project.crystalBall.service.impl.project.ProjectService;
+import com.project.crystalball.dto.project.Project;
+import com.project.crystalball.service.impl.project.ProjectService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -12,7 +12,6 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/projects")
-@CrossOrigin(maxAge = 3600)
 public class ProjectController {
 
     @Autowired

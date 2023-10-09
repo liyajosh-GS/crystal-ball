@@ -1,7 +1,7 @@
-package com.project.crystalBall.dto.project;
+package com.project.crystalball.dto.project;
 
-import com.project.crystalBall.dto.AbstractDto;
-import com.project.crystalBall.entity.project.ProjectType;
+import com.project.crystalball.dto.AbstractDto;
+import com.project.crystalball.entity.project.ProjectType;
 import lombok.*;
 
 import java.util.List;
@@ -20,6 +20,9 @@ public class Project extends AbstractDto {
 
     @NonNull
     private List<String> creators;
+
+    @NonNull
+    private Long userId;
 
     @NonNull
     private Double targetFund;

@@ -1,4 +1,4 @@
-package com.project.crystalBall.exception;
+package com.project.crystalball.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

@@ -1,7 +1,7 @@
-package com.project.crystalBall.mapper;
+package com.project.crystalball.mapper;
 
-import com.project.crystalBall.dto.AbstractDto;
-import com.project.crystalBall.entity.AbstractEntity;
+import com.project.crystalball.dto.AbstractDto;
+import com.project.crystalball.entity.AbstractEntity;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;

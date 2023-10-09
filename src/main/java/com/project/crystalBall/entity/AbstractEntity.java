@@ -1,4 +1,4 @@
-package com.project.crystalBall.entity;
+package com.project.crystalball.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

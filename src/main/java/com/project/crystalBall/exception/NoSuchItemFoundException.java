@@ -1,4 +1,4 @@
-package com.project.crystalBall.exception;
+package com.project.crystalball.exception;
 
 public class NoSuchItemFoundException extends RuntimeException{
 

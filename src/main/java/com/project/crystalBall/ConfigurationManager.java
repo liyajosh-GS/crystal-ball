@@ -1,6 +1,5 @@
-package com.project.crystalBall;
+package com.project.crystalball;
 
-import com.project.crystalBall.dto.project.Project;
 import org.modelmapper.ModelMapper;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

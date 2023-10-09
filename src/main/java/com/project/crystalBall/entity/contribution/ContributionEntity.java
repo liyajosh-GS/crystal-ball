@@ -1,6 +1,6 @@
-package com.project.crystalBall.entity.contribution;
+package com.project.crystalball.entity.contribution;
 
-import com.project.crystalBall.entity.AbstractEntity;
+import com.project.crystalball.entity.AbstractEntity;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -21,4 +21,7 @@ public class ContributionEntity extends AbstractEntity {
 
     @Column(name = "project_id", nullable=false)
     private Long projectId;
+
+    @Column(name = "user_id", nullable=false, updatable = false)
+    private Long userId;
 }
