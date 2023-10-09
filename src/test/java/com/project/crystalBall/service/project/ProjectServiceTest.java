@@ -1,10 +1,10 @@
-package com.project.crystalBall.service.project;
+package com.project.crystalball.service.project;
 
-import com.project.crystalBall.dto.project.Project;
-import com.project.crystalBall.entity.project.ProjectEntity;
-import com.project.crystalBall.mapper.project.ProjectDtoEntityMapper;
-import com.project.crystalBall.repository.ProjectRepository;
-import com.project.crystalBall.service.impl.project.ProjectService;
+import com.project.crystalball.dto.project.Project;
+import com.project.crystalball.entity.project.ProjectEntity;
+import com.project.crystalball.mapper.project.ProjectDtoEntityMapper;
+import com.project.crystalball.repository.ProjectRepository;
+import com.project.crystalball.service.impl.project.ProjectService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

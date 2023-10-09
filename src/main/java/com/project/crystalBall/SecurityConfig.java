@@ -31,36 +31,6 @@ public class SecurityConfig {
 
     private final UserAuthenticationProvider userAuthenticationProvider;
 
-//
-//    @Bean
-//    SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
-//        return httpSecurity
-//                .cors(Customizer.withDefaults())
-//                .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.ALWAYS))
-//                .csrf(AbstractHttpConfigurer::disable)
-//                .authorizeHttpRequests(auth -> {
-//                   auth.requestMatchers(HttpMethod.GET).permitAll();
-//                    auth.requestMatchers(HttpMethod.OPTIONS).permitAll();
-//                   auth.anyRequest().authenticated();
-//                   // auth.anyRequest().permitAll();
-//
-//                })
-//                //.exceptionHandling(handler -> handler.authenticationEntryPoint(new RestAuthenticationEntryPoint()))
-//                .oauth2Login(oauth -> {
-//                    //oauth.authorizationEndpoint(authorizationEndpointConfig -> authorizationEndpointConfig.baseUri("/oauth2/authorize"));
-//                    //oauth.redirectionEndpoint(redirectionEndpointConfig -> redirectionEndpointConfig.baseUri("/login/oauth2/callback/*"));
-//                    oauth.userInfoEndpoint(userInfoEndpointConfig -> userInfoEndpointConfig.userService(customOAuthUserService));
-//
-//                })
-//                //.addFilterBefore(tokenAuthenticationFilter(), UsernamePasswordAuthenticationFilter.class)
-//                .build();
-//    }
-
-//    @Bean
-//    public TokenAuthenticationFilter tokenAuthenticationFilter() {
-//        return new TokenAuthenticationFilter();
-//    }
-
     @Bean
     SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
        return httpSecurity

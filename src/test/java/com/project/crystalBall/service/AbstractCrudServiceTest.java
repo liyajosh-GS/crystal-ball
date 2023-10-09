@@ -1,15 +1,15 @@
-package com.project.crystalBall.service;
+package com.project.crystalball.service;
 
-import com.project.crystalBall.dto.AbstractDto;
-import com.project.crystalBall.dto.project.Project;
-import com.project.crystalBall.entity.AbstractEntity;
-import com.project.crystalBall.entity.project.ProjectEntity;
-import com.project.crystalBall.exception.NoSuchItemFoundException;
-import com.project.crystalBall.mapper.DtoEntityMapper;
-import com.project.crystalBall.mapper.project.ProjectDtoEntityMapper;
-import com.project.crystalBall.repository.ProjectRepository;
-import com.project.crystalBall.service.impl.AbstractCrudService;
-import com.project.crystalBall.service.impl.project.ProjectService;
+import com.project.crystalball.dto.AbstractDto;
+import com.project.crystalball.dto.project.Project;
+import com.project.crystalball.entity.AbstractEntity;
+import com.project.crystalball.entity.project.ProjectEntity;
+import com.project.crystalball.exception.NoSuchItemFoundException;
+import com.project.crystalball.mapper.DtoEntityMapper;
+import com.project.crystalball.mapper.project.ProjectDtoEntityMapper;
+import com.project.crystalball.repository.ProjectRepository;
+import com.project.crystalball.service.impl.AbstractCrudService;
+import com.project.crystalball.service.impl.project.ProjectService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;

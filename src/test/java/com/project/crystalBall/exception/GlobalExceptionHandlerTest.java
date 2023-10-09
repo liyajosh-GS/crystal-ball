@@ -1,7 +1,7 @@
-package com.project.crystalBall.exception;
+package com.project.crystalball.exception;
 
-import com.project.crystalBall.exception.GlobalExceptionHandler;
-import com.project.crystalBall.exception.NoSuchItemFoundException;
+import com.project.crystalball.exception.GlobalExceptionHandler;
+import com.project.crystalball.exception.NoSuchItemFoundException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.http.HttpStatus;
