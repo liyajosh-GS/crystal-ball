@@ -1,6 +1,6 @@
-package com.project.crystalball.entity.project;
+package com.project.crystalBall.entity.project;
 
-import com.project.crystalball.entity.AbstractEntity;
+import com.project.crystalBall.entity.AbstractEntity;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;

@@ -1,13 +1,13 @@
-package com.project.crystalball.service.impl.contribution;
+package com.project.crystalBall.service.impl.contribution;
 
-import com.project.crystalball.dto.contribution.Contribution;
-import com.project.crystalball.entity.contribution.ContributionEntity;
-import com.project.crystalball.entity.project.ProjectEntity;
-import com.project.crystalball.exception.NoSuchItemFoundException;
-import com.project.crystalball.repository.ContributionRepository;
-import com.project.crystalball.repository.ProjectRepository;
-import com.project.crystalball.service.impl.AbstractCrudService;
-import com.project.crystalball.mapper.contribution.ContributionDtoEntityMapper;
+import com.project.crystalBall.dto.contribution.Contribution;
+import com.project.crystalBall.entity.contribution.ContributionEntity;
+import com.project.crystalBall.entity.project.ProjectEntity;
+import com.project.crystalBall.exception.NoSuchItemFoundException;
+import com.project.crystalBall.repository.ContributionRepository;
+import com.project.crystalBall.repository.ProjectRepository;
+import com.project.crystalBall.service.impl.AbstractCrudService;
+import com.project.crystalBall.mapper.contribution.ContributionDtoEntityMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

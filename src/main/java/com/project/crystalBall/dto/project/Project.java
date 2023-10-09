@@ -1,7 +1,7 @@
-package com.project.crystalball.dto.project;
+package com.project.crystalBall.dto.project;
 
-import com.project.crystalball.dto.AbstractDto;
-import com.project.crystalball.entity.project.ProjectType;
+import com.project.crystalBall.dto.AbstractDto;
+import com.project.crystalBall.entity.project.ProjectType;
 import lombok.*;
 
 import java.util.List;

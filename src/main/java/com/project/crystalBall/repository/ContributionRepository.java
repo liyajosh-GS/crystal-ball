@@ -1,6 +1,6 @@
-package com.project.crystalball.repository;
+package com.project.crystalBall.repository;
 
-import com.project.crystalball.entity.contribution.ContributionEntity;
+import com.project.crystalBall.entity.contribution.ContributionEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

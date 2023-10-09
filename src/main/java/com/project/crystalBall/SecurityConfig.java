@@ -1,7 +1,7 @@
-package com.project.crystalball;
+package com.project.crystalBall;
 
-import com.project.crystalball.config.JwtAuthFilter;
-import com.project.crystalball.config.UserAuthenticationProvider;
+import com.project.crystalBall.config.JwtAuthFilter;
+import com.project.crystalBall.config.UserAuthenticationProvider;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;

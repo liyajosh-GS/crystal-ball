@@ -1,6 +1,6 @@
-package com.project.crystalball.exception;
+package com.project.crystalBall.exception;
 
-import com.project.crystalball.exception.NoSuchItemFoundException;
+import com.project.crystalBall.exception.NoSuchItemFoundException;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;

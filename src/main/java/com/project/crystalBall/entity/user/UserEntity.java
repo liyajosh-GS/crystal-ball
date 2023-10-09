@@ -1,7 +1,7 @@
-package com.project.crystalball.entity.user;
+package com.project.crystalBall.entity.user;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.project.crystalball.entity.AbstractEntity;
+import com.project.crystalBall.entity.AbstractEntity;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
