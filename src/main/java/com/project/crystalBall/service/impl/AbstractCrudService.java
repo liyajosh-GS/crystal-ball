@@ -1,10 +1,10 @@
-package com.project.crystalBall.service.impl;
+package com.project.crystalball.service.impl;
 
-import com.project.crystalBall.dto.AbstractDto;
-import com.project.crystalBall.entity.AbstractEntity;
-import com.project.crystalBall.exception.NoSuchItemFoundException;
-import com.project.crystalBall.service.CrudService;
-import com.project.crystalBall.mapper.DtoEntityMapper;
+import com.project.crystalball.dto.AbstractDto;
+import com.project.crystalball.entity.AbstractEntity;
+import com.project.crystalball.exception.NoSuchItemFoundException;
+import com.project.crystalball.service.CrudService;
+import com.project.crystalball.mapper.DtoEntityMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Component;

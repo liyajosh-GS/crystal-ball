@@ -1,4 +1,4 @@
-package com.project.crystalBall.entity.project;
+package com.project.crystalball.entity.project;
 
 public enum FundingStatus {
     PENDING,

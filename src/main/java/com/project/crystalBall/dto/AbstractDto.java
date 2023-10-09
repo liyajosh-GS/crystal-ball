@@ -1,4 +1,4 @@
-package com.project.crystalBall.dto;
+package com.project.crystalball.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

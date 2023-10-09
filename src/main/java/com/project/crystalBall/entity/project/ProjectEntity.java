@@ -1,6 +1,6 @@
-package com.project.crystalBall.entity.project;
+package com.project.crystalball.entity.project;
 
-import com.project.crystalBall.entity.AbstractEntity;
+import com.project.crystalball.entity.AbstractEntity;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -41,5 +41,8 @@ public class ProjectEntity extends AbstractEntity {
 
     @Column(name = "project_type", nullable=false)
     private ProjectType projectType;
+
+    @Column(name = "user_id", nullable=false, updatable = false)
+    private Long userId;
 
 }

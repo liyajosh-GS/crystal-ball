@@ -1,7 +1,7 @@
-package com.project.crystalBall.service;
+package com.project.crystalball.service;
 
-import com.project.crystalBall.dto.AbstractDto;
-import com.project.crystalBall.entity.AbstractEntity;
+import com.project.crystalball.dto.AbstractDto;
+import com.project.crystalball.entity.AbstractEntity;
 
 import java.util.List;
 

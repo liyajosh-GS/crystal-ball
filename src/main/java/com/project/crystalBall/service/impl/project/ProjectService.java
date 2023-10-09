@@ -1,19 +1,17 @@
-package com.project.crystalBall.service.impl.project;
+package com.project.crystalball.service.impl.project;
 
-import com.project.crystalBall.dto.project.Project;
-import com.project.crystalBall.entity.project.ProjectEntity;
-import com.project.crystalBall.mapper.project.ProjectDtoEntityMapper;
-import com.project.crystalBall.repository.ProjectRepository;
-import com.project.crystalBall.service.impl.AbstractCrudService;
+import com.project.crystalball.dto.project.Project;
+import com.project.crystalball.entity.project.ProjectEntity;
+import com.project.crystalball.mapper.project.ProjectDtoEntityMapper;
+import com.project.crystalball.repository.ProjectRepository;
+import com.project.crystalball.service.impl.AbstractCrudService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
-@Primary
 public class ProjectService extends AbstractCrudService<Project, Long, ProjectEntity> {
 
     @Autowired
