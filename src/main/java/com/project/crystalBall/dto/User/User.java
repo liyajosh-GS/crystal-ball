@@ -1,6 +1,6 @@
-package com.project.crystalball.dto.User;
+package com.project.crystalBall.dto.User;
 
-import com.project.crystalball.dto.AbstractDto;
+import com.project.crystalBall.dto.AbstractDto;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

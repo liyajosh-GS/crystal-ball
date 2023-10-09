@@ -1,8 +1,8 @@
-package com.project.crystalball.controller;
+package com.project.crystalBall.controller;
 
 
-import com.project.crystalball.dto.contribution.Contribution;
-import com.project.crystalball.service.impl.contribution.ContributionService;
+import com.project.crystalBall.dto.contribution.Contribution;
+import com.project.crystalBall.service.impl.contribution.ContributionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

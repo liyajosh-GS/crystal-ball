@@ -1,6 +1,6 @@
-package com.project.crystalball.dto.contribution;
+package com.project.crystalBall.dto.contribution;
 
-import com.project.crystalball.dto.AbstractDto;
+import com.project.crystalBall.dto.AbstractDto;
 import lombok.*;
 
 @Data

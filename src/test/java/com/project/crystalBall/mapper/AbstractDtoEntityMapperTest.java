@@ -1,8 +1,8 @@
-package com.project.crystalball.mapper;
+package com.project.crystalBall.mapper;
 
-import com.project.crystalball.dto.project.Project;
-import com.project.crystalball.entity.project.ProjectEntity;
-import com.project.crystalball.mapper.project.ProjectDtoEntityMapper;
+import com.project.crystalBall.dto.project.Project;
+import com.project.crystalBall.entity.project.ProjectEntity;
+import com.project.crystalBall.mapper.project.ProjectDtoEntityMapper;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;

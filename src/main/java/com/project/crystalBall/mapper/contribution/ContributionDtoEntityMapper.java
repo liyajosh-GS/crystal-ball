@@ -1,8 +1,8 @@
-package com.project.crystalball.mapper.contribution;
+package com.project.crystalBall.mapper.contribution;
 
-import com.project.crystalball.dto.contribution.Contribution;
-import com.project.crystalball.entity.contribution.ContributionEntity;
-import com.project.crystalball.mapper.AbstractDtoEntityMapper;
+import com.project.crystalBall.dto.contribution.Contribution;
+import com.project.crystalBall.entity.contribution.ContributionEntity;
+import com.project.crystalBall.mapper.AbstractDtoEntityMapper;
 import org.springframework.stereotype.Component;
 
 @Component

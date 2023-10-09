@@ -1,4 +1,4 @@
-package com.project.crystalball.entity.project;
+package com.project.crystalBall.entity.project;
 
 public enum ProjectType {
     SOFTWARE,

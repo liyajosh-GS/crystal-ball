@@ -1,4 +1,4 @@
-package com.project.crystalball;
+package com.project.crystalBall;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;

@@ -1,11 +1,11 @@
-package com.project.crystalball.service.impl.User;
+package com.project.crystalBall.service.impl.User;
 
-import com.project.crystalball.dto.User.User;
-import com.project.crystalball.entity.user.UserEntity;
-import com.project.crystalball.exception.NoSuchItemFoundException;
-import com.project.crystalball.mapper.user.UserDtoEntityMapper;
-import com.project.crystalball.repository.UserRepository;
-import com.project.crystalball.service.impl.AbstractCrudService;
+import com.project.crystalBall.dto.User.User;
+import com.project.crystalBall.entity.user.UserEntity;
+import com.project.crystalBall.exception.NoSuchItemFoundException;
+import com.project.crystalBall.mapper.user.UserDtoEntityMapper;
+import com.project.crystalBall.repository.UserRepository;
+import com.project.crystalBall.service.impl.AbstractCrudService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;

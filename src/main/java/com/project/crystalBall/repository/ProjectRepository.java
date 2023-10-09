@@ -1,6 +1,6 @@
-package com.project.crystalball.repository;
+package com.project.crystalBall.repository;
 
-import com.project.crystalball.entity.project.ProjectEntity;
+import com.project.crystalBall.entity.project.ProjectEntity;
 import org.springframework.context.annotation.Primary;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;

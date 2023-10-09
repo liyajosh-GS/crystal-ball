@@ -1,7 +1,7 @@
-package com.project.crystalball.controller;
+package com.project.crystalBall.controller;
 
-import com.project.crystalball.dto.project.Project;
-import com.project.crystalball.service.impl.project.ProjectService;
+import com.project.crystalBall.dto.project.Project;
+import com.project.crystalBall.service.impl.project.ProjectService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;

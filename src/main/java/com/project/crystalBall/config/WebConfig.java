@@ -1,4 +1,4 @@
-package com.project.crystalball.config;
+package com.project.crystalBall.config;
 
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;

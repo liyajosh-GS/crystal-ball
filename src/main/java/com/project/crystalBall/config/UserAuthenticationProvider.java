@@ -1,11 +1,11 @@
-package com.project.crystalball.config;
+package com.project.crystalBall.config;
 
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.JWTVerifier;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.interfaces.DecodedJWT;
-import com.project.crystalball.dto.User.User;
-import com.project.crystalball.service.impl.User.UserService;
+import com.project.crystalBall.dto.User.User;
+import com.project.crystalBall.service.impl.User.UserService;
 import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;

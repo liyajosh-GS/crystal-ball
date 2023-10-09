@@ -1,7 +1,7 @@
-package com.project.crystalball.mapper;
+package com.project.crystalBall.mapper;
 
-import com.project.crystalball.dto.AbstractDto;
-import com.project.crystalball.entity.AbstractEntity;
+import com.project.crystalBall.dto.AbstractDto;
+import com.project.crystalBall.entity.AbstractEntity;
 
 public interface DtoEntityMapper<D extends AbstractDto, E extends AbstractEntity> {
 

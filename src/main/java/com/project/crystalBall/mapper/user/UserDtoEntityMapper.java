@@ -1,8 +1,8 @@
-package com.project.crystalball.mapper.user;
+package com.project.crystalBall.mapper.user;
 
-import com.project.crystalball.dto.User.User;
-import com.project.crystalball.entity.user.UserEntity;
-import com.project.crystalball.mapper.AbstractDtoEntityMapper;
+import com.project.crystalBall.dto.User.User;
+import com.project.crystalBall.entity.user.UserEntity;
+import com.project.crystalBall.mapper.AbstractDtoEntityMapper;
 import org.springframework.stereotype.Component;
 
 @Component

@@ -1,11 +1,11 @@
-package com.project.crystalball.controller;
+package com.project.crystalBall.controller;
 
 
-import com.project.crystalball.config.UserAuthenticationProvider;
-import com.project.crystalball.dto.User.User;
-import com.project.crystalball.dto.contribution.Contribution;
-import com.project.crystalball.service.impl.User.UserService;
-import com.project.crystalball.service.impl.contribution.ContributionService;
+import com.project.crystalBall.config.UserAuthenticationProvider;
+import com.project.crystalBall.dto.User.User;
+import com.project.crystalBall.dto.contribution.Contribution;
+import com.project.crystalBall.service.impl.User.UserService;
+import com.project.crystalBall.service.impl.contribution.ContributionService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
@@ -29,7 +29,7 @@ public class AuthenticationController {
     public ResponseEntity create(@RequestBody User userRequest){
         User user = userService.create(userRequest);
         HttpHeaders responseHeaders = new HttpHeaders();
-        responseHeaders.set("token",userAuthenticationProvider.createToken(user));
+        responseHeaders.set("x-token",userAuthenticationProvider.createToken(user));
         user.setPassword(null);
         return ResponseEntity.status(HttpStatus.CREATED)
                 .headers(responseHeaders)
