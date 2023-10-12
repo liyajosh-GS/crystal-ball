@@ -8,10 +8,9 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
-import java.util.Optional;
 
-@Repository
 @Primary
+@Repository
 public interface ProjectRepository extends JpaRepository<ProjectEntity, Long> {
 
     @Query(nativeQuery = true, value = "select * from project where is_archived = :isArchived")

@@ -4,7 +4,7 @@ import com.project.crystalBall.dto.project.Project;
 import com.project.crystalBall.entity.project.ProjectEntity;
 import com.project.crystalBall.mapper.project.ProjectDtoEntityMapper;
 import com.project.crystalBall.repository.ProjectRepository;
-import com.project.crystalBall.service.impl.AbstractCrudService;
+import com.project.crystalBall.service.impl.AbstractDataTransactionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
-public class ProjectService extends AbstractCrudService<Project, Long, ProjectEntity> {
+public class ProjectService extends AbstractDataTransactionService<Project, Long, ProjectEntity> {
 
     @Autowired
     ProjectRepository repository;

@@ -6,7 +6,7 @@ import com.project.crystalBall.entity.project.ProjectEntity;
 import com.project.crystalBall.exception.NoSuchItemFoundException;
 import com.project.crystalBall.repository.ContributionRepository;
 import com.project.crystalBall.repository.ProjectRepository;
-import com.project.crystalBall.service.impl.AbstractCrudService;
+import com.project.crystalBall.service.impl.AbstractFinalDataService;
 import com.project.crystalBall.mapper.contribution.ContributionDtoEntityMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,7 +14,7 @@ import org.springframework.stereotype.Service;
 import java.util.Optional;
 
 @Service
-public class ContributionService extends AbstractCrudService<Contribution, Long, ContributionEntity> {
+public class ContributionService extends AbstractFinalDataService<Contribution, Long, ContributionEntity> {
 
     @Autowired
     ContributionRepository repository;

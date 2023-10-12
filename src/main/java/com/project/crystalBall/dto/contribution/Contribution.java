@@ -1,6 +1,7 @@
 package com.project.crystalBall.dto.contribution;
 
 import com.project.crystalBall.dto.AbstractDto;
+import jakarta.validation.constraints.NotNull;
 import lombok.*;
 
 @Data
@@ -8,12 +9,12 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Contribution extends AbstractDto {
-    @NonNull
+    @NotNull
     private Double amount;
 
-    @NonNull
+    @NotNull
     private Long projectId;
 
-    @NonNull
+    @NotNull
     private Long userId;
 }
