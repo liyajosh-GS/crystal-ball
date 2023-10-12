@@ -10,9 +10,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-
-@Entity
 @Data
+@Entity
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
@@ -26,5 +25,8 @@ public class UserEntity extends AbstractEntity {
 
     @Column(name = "password", length=500, nullable=false)
     private String password;
+
+    @Column(name = "email", length=255, nullable=false)
+    private String email;
 
 }

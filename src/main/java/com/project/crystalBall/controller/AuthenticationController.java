@@ -6,6 +6,7 @@ import com.project.crystalBall.dto.User.User;
 import com.project.crystalBall.dto.contribution.Contribution;
 import com.project.crystalBall.service.impl.User.UserService;
 import com.project.crystalBall.service.impl.contribution.ContributionService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
@@ -26,26 +27,26 @@ public class AuthenticationController {
 
     @PostMapping
     @RequestMapping("/register")
-    public ResponseEntity create(@RequestBody User userRequest){
+    public ResponseEntity<User> create(@RequestBody User userRequest){
         User user = userService.create(userRequest);
         HttpHeaders responseHeaders = new HttpHeaders();
         responseHeaders.set("x-token",userAuthenticationProvider.createToken(user));
         user.setPassword(null);
         return ResponseEntity.status(HttpStatus.CREATED)
                 .headers(responseHeaders)
-                .body(user);
+                .body(null);
     }
 
     @PostMapping
     @RequestMapping("/login")
-    public ResponseEntity login(@RequestBody User userRequest){
+    public ResponseEntity<User> login(@RequestBody User userRequest){
         User user = userService.readByUserNameAndPassword(userRequest.getUserName(), userRequest.getPassword());
         HttpHeaders responseHeaders = new HttpHeaders();
         responseHeaders.set("x-token",userAuthenticationProvider.createToken(user));
         user.setPassword(null);
         return ResponseEntity.status(HttpStatus.OK)
                 .headers(responseHeaders)
-                .body(user);
+                .body(null);
     }
 
 }

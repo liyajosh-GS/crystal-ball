@@ -5,15 +5,16 @@ import com.project.crystalBall.entity.user.UserEntity;
 import com.project.crystalBall.exception.NoSuchItemFoundException;
 import com.project.crystalBall.mapper.user.UserDtoEntityMapper;
 import com.project.crystalBall.repository.UserRepository;
-import com.project.crystalBall.service.impl.AbstractCrudService;
+import com.project.crystalBall.service.impl.AbstractDataTransactionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Optional;
 
 @Service
-public class UserService extends AbstractCrudService<User, Long, UserEntity> {
+public class UserService extends AbstractDataTransactionService<User, Long, UserEntity> {
 
     @Autowired
     UserRepository userRepository;
@@ -39,6 +40,7 @@ public class UserService extends AbstractCrudService<User, Long, UserEntity> {
         }
     }
 
+    @Transactional(rollbackFor = Exception.class)
     public User readByUserNameAndPassword(String userName, String password) {
         Optional<UserEntity> existingUser = userRepository.findByUserName(userName);
         if(existingUser.isEmpty()){

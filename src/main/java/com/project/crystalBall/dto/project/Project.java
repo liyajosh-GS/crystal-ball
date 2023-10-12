@@ -2,6 +2,7 @@ package com.project.crystalBall.dto.project;
 
 import com.project.crystalBall.dto.AbstractDto;
 import com.project.crystalBall.entity.project.ProjectType;
+import jakarta.validation.constraints.NotNull;
 import lombok.*;
 
 import java.util.List;
@@ -12,23 +13,23 @@ import java.util.List;
 @NoArgsConstructor
 public class Project extends AbstractDto {
 
-    @NonNull
+    @NotNull
     private String name;
 
-    @NonNull
+    @NotNull
     private String description;
 
-    @NonNull
-    private List<String> creators;
+    @NotNull
+    private List<String> groupMembers;
 
-    @NonNull
+    @NotNull
     private Long userId;
 
-    @NonNull
+    @NotNull
     private Double targetFund;
 
     private Double collectedFund;
 
-    @NonNull
+    @NotNull
     private ProjectType projectType;
 }

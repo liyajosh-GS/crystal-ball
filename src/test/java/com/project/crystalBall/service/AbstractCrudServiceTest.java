@@ -1,14 +1,12 @@
 package com.project.crystalBall.service;
 
-import com.project.crystalBall.dto.AbstractDto;
 import com.project.crystalBall.dto.project.Project;
-import com.project.crystalBall.entity.AbstractEntity;
 import com.project.crystalBall.entity.project.ProjectEntity;
 import com.project.crystalBall.exception.NoSuchItemFoundException;
 import com.project.crystalBall.mapper.DtoEntityMapper;
 import com.project.crystalBall.mapper.project.ProjectDtoEntityMapper;
 import com.project.crystalBall.repository.ProjectRepository;
-import com.project.crystalBall.service.impl.AbstractCrudService;
+import com.project.crystalBall.service.impl.AbstractDataTransactionService;
 import com.project.crystalBall.service.impl.project.ProjectService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -39,7 +37,7 @@ public class AbstractCrudServiceTest {
     ProjectDtoEntityMapper projectDtoEntityMapper;
 
     @InjectMocks
-    private AbstractCrudService abstractCrudService = new ProjectService(projectRepository, projectDtoEntityMapper );
+    private AbstractDataTransactionService abstractCrudService = new ProjectService(projectRepository, projectDtoEntityMapper );
 
 
     @BeforeEach

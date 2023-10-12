@@ -2,12 +2,12 @@ package com.project.crystalBall.mapper;
 
 import com.project.crystalBall.dto.AbstractDto;
 import com.project.crystalBall.entity.AbstractEntity;
+import com.project.crystalBall.entity.AbstractFinalEntity;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-@Component
-public abstract class AbstractDtoEntityMapper<D extends AbstractDto, E extends AbstractEntity> implements DtoEntityMapper<D, E> {
+public abstract class AbstractDtoEntityMapper<D extends AbstractDto, E extends AbstractFinalEntity> implements DtoEntityMapper<D, E> {
 
     @Autowired
     ModelMapper modelMapper;

@@ -10,9 +10,8 @@ import org.hibernate.annotations.JdbcTypeCode;
 import org.hibernate.type.SqlTypes;
 
 import java.util.List;
-
-@Entity
 @Data
+@Entity
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
@@ -27,8 +26,8 @@ public class ProjectEntity extends AbstractEntity {
     private String description;
 
     @JdbcTypeCode(SqlTypes.JSON)
-    @Column(name = "creators", nullable=false, updatable = false)
-    private List<String> creators;
+    @Column(name = "group_members", nullable=false)
+    private List<String> groupMembers;
 
     @Column(name = "is_archived")
     private Boolean isArchived;

@@ -1,11 +1,15 @@
 package com.project.crystalBall.controller;
 
+import com.project.crystalBall.dto.User.User;
 import com.project.crystalBall.dto.project.Project;
 import com.project.crystalBall.service.impl.project.ProjectService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.AuthenticatedPrincipal;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -36,7 +40,8 @@ public class ProjectController {
     }
 
     @PostMapping
-    public ResponseEntity<Project> create(@RequestBody Project project){
+    public ResponseEntity<Project> create(@RequestBody @Valid Project project, @AuthenticationPrincipal User user){
+        project.setUserId(user.getId());
         return ResponseEntity.status(HttpStatus.CREATED)
                 .body(projectService.create(project));
     }

@@ -1,20 +1,20 @@
 package com.project.crystalBall.service.impl;
 
 import com.project.crystalBall.dto.AbstractDto;
-import com.project.crystalBall.entity.AbstractEntity;
+import com.project.crystalBall.entity.AbstractFinalEntity;
 import com.project.crystalBall.exception.NoSuchItemFoundException;
-import com.project.crystalBall.service.CrudService;
 import com.project.crystalBall.mapper.DtoEntityMapper;
+import com.project.crystalBall.service.FinalDataTransactionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
-@Component
-public abstract class AbstractCrudService<D extends AbstractDto, K extends Long, E extends AbstractEntity> implements CrudService<D, K, E> {
+public abstract class AbstractFinalDataService<D extends AbstractDto, K extends Long, E extends AbstractFinalEntity> implements FinalDataTransactionService<D, K, E> {
 
     private static final String READ_ALL_KEY = "recordUpdateTime";
     @Autowired
@@ -23,32 +23,23 @@ public abstract class AbstractCrudService<D extends AbstractDto, K extends Long,
     @Autowired
     DtoEntityMapper<D, E> mapper;
 
-    protected AbstractCrudService(JpaRepository repository, DtoEntityMapper<D, E> mapper){
+    protected AbstractFinalDataService(JpaRepository<E, Long> repository, DtoEntityMapper<D, E> mapper){
         this.repository = repository;
         this.mapper = mapper;
     }
+
     @Override
+    @Transactional(rollbackFor = Exception.class)
     public D create(D dto) {
         E entity = mapper.convertToEntity(dto);
-        repository.save(entity);
-        return mapper.convertToDto(entity);
-    }
-    @Override
-    public D update(D dto) {
-        E entity = mapper.convertToEntity(dto);
-        repository.save(entity);
-        return mapper.convertToDto(entity);
+        E createdEntity = (E) repository.save(entity);
+        return mapper.convertToDto(createdEntity);
     }
 
     @Override
     public D read(Long id) {
         Optional<E> entity = repository.findById(id);
         return entity.map(e -> mapper.convertToDto(e)).orElseThrow(() -> new NoSuchItemFoundException("Requested resource does not exist"));
-    }
-
-    @Override
-    public void delete(Long id) {
-        repository.deleteById(id);
     }
 
     @Override

@@ -3,9 +3,11 @@ package com.project.crystalBall.mapper.contribution;
 import com.project.crystalBall.dto.contribution.Contribution;
 import com.project.crystalBall.entity.contribution.ContributionEntity;
 import com.project.crystalBall.mapper.AbstractDtoEntityMapper;
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
 @Component
+@Primary
 public class ContributionDtoEntityMapper extends AbstractDtoEntityMapper<Contribution, ContributionEntity> {
 
     @Override
