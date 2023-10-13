@@ -1,4 +1,4 @@
-package com.project.crystalBall.config;
+package com.project.crystalBall.config.securityConfig;
 
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.JWTVerifier;
@@ -45,7 +45,6 @@ public class UserAuthenticationProvider {
                 .withSubject(user.getId().toString())
                 .withIssuedAt(now)
                 .withExpiresAt(validity)
-                .withClaim("userName", user.getUserName())
                 .sign(algorithm);
     }
 
@@ -57,7 +56,7 @@ public class UserAuthenticationProvider {
 
         DecodedJWT decoded = verifier.verify(token);
 
-        User userDetails = userService.readByUserName(decoded.getClaim("userName").asString());
+        User userDetails = userService.read(Long.parseLong(decoded.getSubject()));
 
         return new UsernamePasswordAuthenticationToken(userDetails, null, Collections.emptyList());
     }

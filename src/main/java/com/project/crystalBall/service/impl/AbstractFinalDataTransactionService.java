@@ -4,27 +4,27 @@ import com.project.crystalBall.dto.AbstractDto;
 import com.project.crystalBall.entity.AbstractFinalEntity;
 import com.project.crystalBall.exception.NoSuchItemFoundException;
 import com.project.crystalBall.mapper.DtoEntityMapper;
+import com.project.crystalBall.repository.RepositoryFactory;
 import com.project.crystalBall.service.FinalDataTransactionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
-public abstract class AbstractFinalDataService<D extends AbstractDto, K extends Long, E extends AbstractFinalEntity> implements FinalDataTransactionService<D, K, E> {
+public abstract class AbstractFinalDataTransactionService<D extends AbstractDto, K extends Long, E extends AbstractFinalEntity> implements FinalDataTransactionService<D, K, E> {
 
     private static final String READ_ALL_KEY = "recordUpdateTime";
     @Autowired
-    private JpaRepository repository;
+    private JpaRepository<E, K> repository;
 
     @Autowired
     DtoEntityMapper<D, E> mapper;
 
-    protected AbstractFinalDataService(JpaRepository<E, Long> repository, DtoEntityMapper<D, E> mapper){
-        this.repository = repository;
+    protected AbstractFinalDataTransactionService(RepositoryFactory repositoryFactory, DtoEntityMapper<D, E> mapper)  {
+        this.repository = repositoryFactory.getRepository();
         this.mapper = mapper;
     }
 
@@ -37,7 +37,7 @@ public abstract class AbstractFinalDataService<D extends AbstractDto, K extends 
     }
 
     @Override
-    public D read(Long id) {
+    public D read(K id) {
         Optional<E> entity = repository.findById(id);
         return entity.map(e -> mapper.convertToDto(e)).orElseThrow(() -> new NoSuchItemFoundException("Requested resource does not exist"));
     }
@@ -47,4 +47,5 @@ public abstract class AbstractFinalDataService<D extends AbstractDto, K extends 
         List<E> entities = repository.findAll();
         return entities.stream().map((entity) -> (D)mapper.convertToDto(entity)).collect(Collectors.toList());
     }
+
 }

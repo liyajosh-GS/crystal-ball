@@ -1,13 +1,9 @@
 package com.project.crystalBall.controller;
 
 
-import com.project.crystalBall.config.UserAuthenticationProvider;
+import com.project.crystalBall.config.securityConfig.UserAuthenticationProvider;
 import com.project.crystalBall.dto.User.User;
-import com.project.crystalBall.dto.contribution.Contribution;
 import com.project.crystalBall.service.impl.User.UserService;
-import com.project.crystalBall.service.impl.contribution.ContributionService;
-import jakarta.validation.Valid;
-import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;

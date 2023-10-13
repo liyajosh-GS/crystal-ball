@@ -1,7 +1,7 @@
 package com.project.crystalBall;
 
-import com.project.crystalBall.config.JwtAuthFilter;
-import com.project.crystalBall.config.UserAuthenticationProvider;
+import com.project.crystalBall.config.securityConfig.JwtAuthFilter;
+import com.project.crystalBall.config.securityConfig.UserAuthenticationProvider;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -18,7 +18,6 @@ import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
-import java.util.Arrays;
 import java.util.List;
 
 @Configuration

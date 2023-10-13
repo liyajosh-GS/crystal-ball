@@ -5,8 +5,9 @@ import com.project.crystalBall.entity.contribution.ContributionEntity;
 import com.project.crystalBall.entity.project.ProjectEntity;
 import com.project.crystalBall.exception.NoSuchItemFoundException;
 import com.project.crystalBall.repository.ContributionRepository;
+import com.project.crystalBall.repository.ContributionRepositoryFactory;
 import com.project.crystalBall.repository.ProjectRepository;
-import com.project.crystalBall.service.impl.AbstractFinalDataService;
+import com.project.crystalBall.service.impl.AbstractFinalDataTransactionService;
 import com.project.crystalBall.mapper.contribution.ContributionDtoEntityMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,7 +15,7 @@ import org.springframework.stereotype.Service;
 import java.util.Optional;
 
 @Service
-public class ContributionService extends AbstractFinalDataService<Contribution, Long, ContributionEntity> {
+public class ContributionService extends AbstractFinalDataTransactionService<Contribution, Long, ContributionEntity> {
 
     @Autowired
     ContributionRepository repository;
@@ -26,8 +27,11 @@ public class ContributionService extends AbstractFinalDataService<Contribution, 
     ProjectRepository projectRepository;
 
     @Autowired
-    public ContributionService(ContributionRepository contributionRepository, ContributionDtoEntityMapper mapper) {
-        super(contributionRepository, mapper);
+    ContributionRepositoryFactory contributionRepositoryFactory;
+
+    @Autowired
+    public ContributionService(ContributionRepositoryFactory contributionRepositoryFactory, ContributionDtoEntityMapper mapper) {
+        super(contributionRepositoryFactory, mapper);
     }
 
     @Override

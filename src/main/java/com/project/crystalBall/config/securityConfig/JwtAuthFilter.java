@@ -1,4 +1,4 @@
-package com.project.crystalBall.config;
+package com.project.crystalBall.config.securityConfig;
 
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
