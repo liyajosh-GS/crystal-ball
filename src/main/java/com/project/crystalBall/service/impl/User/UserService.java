@@ -1,10 +1,12 @@
 package com.project.crystalBall.service.impl.User;
 
 import com.project.crystalBall.dto.User.User;
+import com.project.crystalBall.entity.AbstractEntity;
 import com.project.crystalBall.entity.user.UserEntity;
 import com.project.crystalBall.exception.NoSuchItemFoundException;
 import com.project.crystalBall.mapper.user.UserDtoEntityMapper;
 import com.project.crystalBall.repository.UserRepository;
+import com.project.crystalBall.repository.UserRepositoryFactory;
 import com.project.crystalBall.service.impl.AbstractDataTransactionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -26,8 +28,11 @@ public class UserService extends AbstractDataTransactionService<User, Long, User
     PasswordEncoder passwordEncoder;
 
     @Autowired
-    public UserService(UserRepository userRepository, UserDtoEntityMapper mapper) {
-        super(userRepository, mapper);
+    UserRepositoryFactory userRepositoryFactory;
+
+    @Autowired
+    public UserService(UserRepositoryFactory userRepositoryFactory, UserDtoEntityMapper mapper) {
+        super(userRepositoryFactory, mapper);
     }
 
     public User create(User user){

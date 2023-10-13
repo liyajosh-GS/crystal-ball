@@ -10,7 +10,7 @@ public interface FinalDataTransactionService<D extends AbstractDto, K extends Lo
 
     D create(D dto);
 
-    D read(Long id);
+    D read(K id);
 
     List<D> readAll();
 }

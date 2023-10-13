@@ -12,6 +12,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Repository
+@Primary
 public interface UserRepository extends JpaRepository<UserEntity, Long> {
 
     @Query(nativeQuery = true, value = "select * from user_details where name = :userName and password = :encodedPassword")

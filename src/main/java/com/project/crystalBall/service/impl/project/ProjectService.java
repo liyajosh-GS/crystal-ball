@@ -4,6 +4,7 @@ import com.project.crystalBall.dto.project.Project;
 import com.project.crystalBall.entity.project.ProjectEntity;
 import com.project.crystalBall.mapper.project.ProjectDtoEntityMapper;
 import com.project.crystalBall.repository.ProjectRepository;
+import com.project.crystalBall.repository.ProjectRepositoryFactory;
 import com.project.crystalBall.service.impl.AbstractDataTransactionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -21,8 +22,11 @@ public class ProjectService extends AbstractDataTransactionService<Project, Long
     ProjectDtoEntityMapper mapper;
 
     @Autowired
-    public ProjectService(ProjectRepository projectRepository, ProjectDtoEntityMapper mapper) {
-        super(projectRepository, mapper);
+    ProjectRepositoryFactory projectRepositoryFactory;
+
+    @Autowired
+    public ProjectService(ProjectRepositoryFactory projectRepositoryFactory, ProjectDtoEntityMapper mapper) {
+        super(projectRepositoryFactory, mapper);
     }
 
     @Override
