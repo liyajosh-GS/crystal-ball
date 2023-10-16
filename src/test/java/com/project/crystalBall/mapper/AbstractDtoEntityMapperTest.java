@@ -31,7 +31,6 @@ public class AbstractDtoEntityMapperTest {
     @Test
     public void testConvertToDto() {
         ProjectEntity projectEntity = new ProjectEntity();
-        projectEntity.setId(1L);
         projectEntity.setName("project");
 
         Project projectDto = new Project();
@@ -49,7 +48,6 @@ public class AbstractDtoEntityMapperTest {
     @Test
     public void testConvertToEntity() {
         ProjectEntity projectEntity = new ProjectEntity();
-        projectEntity.setId(1L);
         projectEntity.setName("project");
 
         Project projectDto = new Project();
