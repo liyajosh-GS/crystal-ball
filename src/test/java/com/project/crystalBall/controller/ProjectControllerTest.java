@@ -1,5 +1,6 @@
 package com.project.crystalBall.controller;
 
+import com.project.crystalBall.dto.User.User;
 import com.project.crystalBall.dto.project.Project;
 import com.project.crystalBall.service.impl.project.ProjectService;
 import org.junit.jupiter.api.BeforeEach;
@@ -78,7 +79,7 @@ public class ProjectControllerTest {
 
         when(projectService.create(project)).thenReturn(project);
 
-        ResponseEntity<Project> responseEntity = projectController.create(project);
+        ResponseEntity<Project> responseEntity = projectController.create(project, new User());
 
         verify(projectService, times(1)).create(project);
         assertEquals(HttpStatus.CREATED, responseEntity.getStatusCode());

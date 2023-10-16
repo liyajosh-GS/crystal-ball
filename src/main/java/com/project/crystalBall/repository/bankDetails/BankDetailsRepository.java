@@ -1,4 +1,4 @@
-package com.project.crystalBall.repository;
+package com.project.crystalBall.repository.bankDetails;
 
 import com.project.crystalBall.entity.bankDetails.BankDetailsEntity;
 import org.springframework.data.jpa.repository.JpaRepository;

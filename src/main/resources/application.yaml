@@ -4,7 +4,7 @@ spring:
 
   #  configure jdbc driver and datasource
   datasource:
-    url: jdbc:postgresql://localhost/initial
+    url: jdbc:postgresql://localhost/crystal-ball
     username: postgres
     password: kikkuAchu
     driver-class-name: org.postgresql.Driver
@@ -30,6 +30,10 @@ logging:
             sql:
               BasicBinder: TRACE
 
-
+# encryption key
 encryptor:
   initialization-vector: "sampleSampleSamp"
+
+#cors
+cors:
+  allowedOrigin: http://localhost:3000

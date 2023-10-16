@@ -1,5 +1,6 @@
 package com.project.crystalBall.controller;
 
+import com.project.crystalBall.dto.User.User;
 import com.project.crystalBall.dto.contribution.Contribution;
 import com.project.crystalBall.service.impl.contribution.ContributionService;
 import org.junit.jupiter.api.BeforeEach;
@@ -34,7 +35,7 @@ public class ContributionControllerTest {
 
         when(contributionService.create(contribution)).thenReturn(contribution);
 
-        ResponseEntity responseEntity = contributionController.create(contribution);
+        ResponseEntity responseEntity = contributionController.create(contribution, new User());
 
         verify(contributionService, times(1)).create(contribution);
         assertEquals(HttpStatus.CREATED, responseEntity.getStatusCode());

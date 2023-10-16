@@ -1,4 +1,4 @@
-package com.project.crystalBall.repository;
+package com.project.crystalBall.repository.project;
 
 import com.project.crystalBall.entity.project.ProjectEntity;
 import org.springframework.context.annotation.Primary;

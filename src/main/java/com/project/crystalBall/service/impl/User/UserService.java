@@ -1,12 +1,11 @@
 package com.project.crystalBall.service.impl.User;
 
 import com.project.crystalBall.dto.User.User;
-import com.project.crystalBall.entity.AbstractEntity;
 import com.project.crystalBall.entity.user.UserEntity;
 import com.project.crystalBall.exception.NoSuchItemFoundException;
 import com.project.crystalBall.mapper.user.UserDtoEntityMapper;
-import com.project.crystalBall.repository.UserRepository;
-import com.project.crystalBall.repository.UserRepositoryFactory;
+import com.project.crystalBall.repository.user.UserRepository;
+import com.project.crystalBall.repository.user.UserRepositoryFactory;
 import com.project.crystalBall.service.impl.AbstractDataTransactionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;

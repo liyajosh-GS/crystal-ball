@@ -92,6 +92,7 @@
 							<exclude>
 								**/*com/project/crystalBall/entity*/**
 							</exclude>
+
 <!--							<exclude>-->
 <!--								**/*com/project/crystalBall/**-->
 <!--							</exclude>-->
