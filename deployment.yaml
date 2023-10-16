@@ -22,9 +22,9 @@ spec:
           env:
             - name: POSTGRES_HOST
               value: 10.244.0.14
-            - name: POSTGRES_DB
-              value: initial
             - name: POSTGRES_USER
               value: postgres
             - name: POSTGRES_PASSWORD
               value: password
+            - name: UI_URL
+              value: 10.244.0.18
