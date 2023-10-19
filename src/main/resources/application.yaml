@@ -4,9 +4,9 @@ spring:
 
   #  configure jdbc driver and datasource
   datasource:
-    url: jdbc:postgresql://${POSTGRES_HOST}/crystal-ball
-    username: ${POSTGRES_USER}
-    password: ${POSTGRES_PASSWORD}
+    url: jdbc:postgresql://localhost/crystal-ball
+    username: postgres
+    password: kikkuAchu
     driver-class-name: org.postgresql.Driver
 
   #  configure JPA
@@ -36,4 +36,4 @@ encryptor:
 
 #cors
 cors:
-  allowedOrigin: ${UI_URL}
+  allowedOrigin: http://localhost:3000

@@ -5,11 +5,11 @@ import com.project.crystalBall.entity.contribution.ContributionEntity;
 import com.project.crystalBall.entity.project.ProjectEntity;
 import com.project.crystalBall.exception.NoSuchItemFoundException;
 import com.project.crystalBall.repository.contribution.ContributionRepository;
-import com.project.crystalBall.repository.contribution.ContributionRepositoryFactory;
 import com.project.crystalBall.repository.project.ProjectRepository;
 import com.project.crystalBall.service.impl.AbstractFinalDataTransactionService;
 import com.project.crystalBall.mapper.contribution.ContributionDtoEntityMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
@@ -18,7 +18,7 @@ import java.util.Optional;
 public class ContributionService extends AbstractFinalDataTransactionService<Contribution, Long, ContributionEntity> {
 
     @Autowired
-    ContributionRepository repository;
+    ContributionRepository contributionRepository;
 
     @Autowired
     ContributionDtoEntityMapper mapper;
@@ -27,11 +27,8 @@ public class ContributionService extends AbstractFinalDataTransactionService<Con
     ProjectRepository projectRepository;
 
     @Autowired
-    ContributionRepositoryFactory contributionRepositoryFactory;
-
-    @Autowired
-    public ContributionService(ContributionRepositoryFactory contributionRepositoryFactory, ContributionDtoEntityMapper mapper) {
-        super(contributionRepositoryFactory, mapper);
+    public ContributionService(ContributionDtoEntityMapper mapper) {
+        super(mapper);
     }
 
     @Override
@@ -51,11 +48,16 @@ public class ContributionService extends AbstractFinalDataTransactionService<Con
         }
         projectEntity.setCollectedFund(updatedFund);
 
-        repository.save(contributionEntity);
+        contributionRepository.save(contributionEntity);
         projectRepository.save(projectEntity);
 
         return contribution;
 
+    }
+
+    @Override
+    public JpaRepository<ContributionEntity, Long> getRepository() {
+        return contributionRepository;
     }
 
 }

@@ -8,6 +8,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="security" />
+        <module name="test" />
         <module name="re-structure" />
         <module name="automate" />
         <module name="bank-back" />
@@ -27,6 +28,7 @@
       <module name="re-structure" options="-parameters" />
       <module name="security" options="-parameters" />
       <module name="security-new" options="-parameters" />
+      <module name="test" options="-parameters" />
       <module name="user" options="-parameters" />
     </option>
   </component>

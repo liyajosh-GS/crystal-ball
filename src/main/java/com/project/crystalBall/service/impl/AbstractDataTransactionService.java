@@ -2,8 +2,6 @@ package com.project.crystalBall.service.impl;
 
 import com.project.crystalBall.dto.AbstractDto;
 import com.project.crystalBall.entity.AbstractEntity;
-import com.project.crystalBall.entity.AbstractFinalEntity;
-import com.project.crystalBall.repository.RepositoryFactory;
 import com.project.crystalBall.service.DataTransactionService;
 import com.project.crystalBall.mapper.DtoEntityMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,9 +18,9 @@ public abstract class AbstractDataTransactionService<D extends AbstractDto, K ex
     DtoEntityMapper<D, E> mapper;
 
 
-    protected AbstractDataTransactionService(RepositoryFactory repositoryFactory, DtoEntityMapper<D, E> mapper){
-        super(repositoryFactory, mapper);
-        this.repository = repositoryFactory.getRepository();
+    protected AbstractDataTransactionService(DtoEntityMapper<D, E> mapper){
+        super(mapper);
+        this.repository = getRepository();
         this.mapper = mapper;
     }
 

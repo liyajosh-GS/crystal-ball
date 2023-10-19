@@ -5,9 +5,9 @@ import com.project.crystalBall.entity.user.UserEntity;
 import com.project.crystalBall.exception.NoSuchItemFoundException;
 import com.project.crystalBall.mapper.user.UserDtoEntityMapper;
 import com.project.crystalBall.repository.user.UserRepository;
-import com.project.crystalBall.repository.user.UserRepositoryFactory;
 import com.project.crystalBall.service.impl.AbstractDataTransactionService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -25,13 +25,10 @@ public class UserService extends AbstractDataTransactionService<User, Long, User
 
     @Autowired
     PasswordEncoder passwordEncoder;
-
+    
     @Autowired
-    UserRepositoryFactory userRepositoryFactory;
-
-    @Autowired
-    public UserService(UserRepositoryFactory userRepositoryFactory, UserDtoEntityMapper mapper) {
-        super(userRepositoryFactory, mapper);
+    public UserService(UserDtoEntityMapper mapper) {
+        super(mapper);
     }
 
     public User create(User user){
@@ -42,6 +39,11 @@ public class UserService extends AbstractDataTransactionService<User, Long, User
         } else {
             throw new RuntimeException("Existing user name");
         }
+    }
+
+    @Override
+    public JpaRepository<UserEntity, Long> getRepository() {
+        return userRepository;
     }
 
     @Transactional(rollbackFor = Exception.class)

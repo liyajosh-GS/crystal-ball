@@ -4,7 +4,6 @@ import com.project.crystalBall.dto.AbstractDto;
 import com.project.crystalBall.entity.AbstractFinalEntity;
 import com.project.crystalBall.exception.NoSuchItemFoundException;
 import com.project.crystalBall.mapper.DtoEntityMapper;
-import com.project.crystalBall.repository.RepositoryFactory;
 import com.project.crystalBall.service.FinalDataTransactionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -16,15 +15,14 @@ import java.util.stream.Collectors;
 
 public abstract class AbstractFinalDataTransactionService<D extends AbstractDto, K extends Long, E extends AbstractFinalEntity> implements FinalDataTransactionService<D, K, E> {
 
-    private static final String READ_ALL_KEY = "recordUpdateTime";
     @Autowired
     private JpaRepository<E, K> repository;
 
     @Autowired
     DtoEntityMapper<D, E> mapper;
 
-    protected AbstractFinalDataTransactionService(RepositoryFactory repositoryFactory, DtoEntityMapper<D, E> mapper)  {
-        this.repository = repositoryFactory.getRepository();
+    protected AbstractFinalDataTransactionService(DtoEntityMapper<D, E> mapper)  {
+        this.repository = getRepository();
         this.mapper = mapper;
     }
 
@@ -48,4 +46,5 @@ public abstract class AbstractFinalDataTransactionService<D extends AbstractDto,
         return entities.stream().map((entity) -> (D)mapper.convertToDto(entity)).collect(Collectors.toList());
     }
 
+    public abstract JpaRepository<E, K> getRepository();
 }

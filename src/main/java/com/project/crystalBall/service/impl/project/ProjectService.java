@@ -4,9 +4,9 @@ import com.project.crystalBall.dto.project.Project;
 import com.project.crystalBall.entity.project.ProjectEntity;
 import com.project.crystalBall.mapper.project.ProjectDtoEntityMapper;
 import com.project.crystalBall.repository.project.ProjectRepository;
-import com.project.crystalBall.repository.project.ProjectRepositoryFactory;
 import com.project.crystalBall.service.impl.AbstractDataTransactionService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -16,17 +16,14 @@ import java.util.stream.Collectors;
 public class ProjectService extends AbstractDataTransactionService<Project, Long, ProjectEntity> {
 
     @Autowired
-    ProjectRepository repository;
+    ProjectRepository projectRepository;
 
     @Autowired
     ProjectDtoEntityMapper mapper;
 
     @Autowired
-    ProjectRepositoryFactory projectRepositoryFactory;
-
-    @Autowired
-    public ProjectService(ProjectRepositoryFactory projectRepositoryFactory, ProjectDtoEntityMapper mapper) {
-        super(projectRepositoryFactory, mapper);
+    public ProjectService(ProjectDtoEntityMapper mapper) {
+        super(mapper);
     }
 
     @Override
@@ -34,12 +31,17 @@ public class ProjectService extends AbstractDataTransactionService<Project, Long
         ProjectEntity entity = mapper.convertToEntity(dto);
         entity.setCollectedFund(0.00);
         entity.setIsArchived(Boolean.FALSE);
-        repository.save(entity);
+        projectRepository.save(entity);
         return mapper.convertToDto(entity);
     }
 
+    @Override
+    public JpaRepository<ProjectEntity, Long> getRepository() {
+        return projectRepository;
+    }
+
     public List<Project> readAllByStatus(Boolean isArchived) {
-        List<ProjectEntity> entities = repository.findByProjectStatus(isArchived);
+        List<ProjectEntity> entities = projectRepository.findByProjectStatus(isArchived);
         return entities.stream().map((entity) -> mapper.convertToDto(entity)).collect(Collectors.toList());
     }
 
