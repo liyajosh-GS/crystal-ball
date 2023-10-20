@@ -97,10 +97,9 @@
 							<exclude>
 								**/*com/project/crystalBall/entity*/**
 							</exclude>
-
-<!--							<exclude>-->
-<!--								**/*com/project/crystalBall/**-->
-<!--							</exclude>-->
+							<exclude>
+								**/*com/project/crystalBall/config*/**
+							</exclude>
 						</excludes>
 					</configuration>
 				</plugin>
